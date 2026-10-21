@@ -1,10 +1,12 @@
 name: Game Analytics E2E Pipeline
 
 on:
+  push:
+    branches:
+      - main
   schedule:
-    # Chạy tự động lúc 02:00 AM UTC mỗi ngày
-    - cron: '0 2 * * *'
-  workflow_dispatch: # Cho phép nhấn nút chạy thủ công trên GitHub UI
+    - cron: '0 2 * * *' # Chạy tự động lúc 02:00 AM UTC mỗi ngày
+  workflow_dispatch: # Cho phép nhấn nút Run manual trên GitHub UI
 
 jobs:
   run_pipeline:
@@ -37,9 +39,8 @@ jobs:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: dbt test --target prod
 
-      - name: Generate & Upload Lineage Documentation
+      - name: Generate Lineage Documentation
         if: always()
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-        run: |
-          dbt docs generate
+        run: dbt docs generate
