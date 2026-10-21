@@ -1,0 +1,17 @@
+version: 2
+
+sources:
+  - name: bronze_raw
+    description: "Nguồn dữ liệu Parquet thô đã phân vùng từ ổ đĩa local"
+    meta:
+      external_location: "C:/Users/LENOVO/Downloads/DA2/parquet_daily/{name}/*/*.parquet"
+    tables:
+      - name: level_start
+      - name: level_end
+      - name: ad_impression
+      - name: in_app_purchase
+      - name: earn_resource
+      - name: spend_resource
+      - name: buy_resource
+      - name: winstreak_point_gained
+      - name: winstreak_reward_claimed

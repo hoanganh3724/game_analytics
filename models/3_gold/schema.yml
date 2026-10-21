@@ -1,0 +1,38 @@
+version: 2
+
+models:
+  - name: dim_users
+    description: "Bảng chiều hồ sơ người chơi"
+    columns:
+      - name: user_pseudo_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "Bảng chiều thời gian"
+    columns:
+      - name: date_key
+        tests:
+          - unique
+          - not_null
+
+  - name: fact_daily_user_metrics
+    description: "Bảng tổng hợp chỉ số người dùng theo ngày"
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - user_pseudo_id
+              - metric_date
+    columns:
+      - name: user_pseudo_id
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_users')
+                field: user_pseudo_id
+      - name: metric_date
+        tests:
+          - not_null
