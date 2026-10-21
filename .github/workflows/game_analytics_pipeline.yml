@@ -5,8 +5,8 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 2 * * *' # Chạy tự động lúc 02:00 AM UTC mỗi ngày
-  workflow_dispatch: # Cho phép nhấn nút Run manual trên GitHub UI
+    - cron: '0 2 * * *'
+  workflow_dispatch:
 
 jobs:
   run_pipeline:
@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Python 3.10
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: '3.10'
 
@@ -27,20 +27,24 @@ jobs:
           pip install dbt-duckdb dbt-utils dbt-expectations
 
       - name: Install dbt Packages
-        run: dbt deps
+        run: |
+          python -m dbt deps
 
       - name: Run dbt Data Transformations
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-        run: dbt run --target prod
+        run: |
+          python -m dbt run --target prod
 
       - name: Run Data Quality Tests
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-        run: dbt test --target prod
+        run: |
+          python -m dbt test --target prod
 
       - name: Generate Lineage Documentation
         if: always()
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
-        run: dbt docs generate
+        run: |
+          python -m dbt docs generate
