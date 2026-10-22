@@ -1,9 +1,9 @@
 {{ config(materialized='table') }}
 
 WITH valid_users AS (
-    -- Chỉ lấy danh sách người dùng hợp lệ đã có trong dim_users để đảm bảo toàn vẹn khóa ngoại
+    -- Chỉ lấy danh sách người dùng hợp lệ đã có trong dim_user để đảm bảo toàn vẹn khóa ngoại
     SELECT user_pseudo_id 
-    FROM {{ ref('dim_users_devices') }}
+    FROM {{ ref('dim_user_devices') }}
 ),
 
 daily_gameplay AS (
