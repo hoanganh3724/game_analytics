@@ -28,23 +28,23 @@ jobs:
 
       - name: Install dbt Packages
         run: |
-          python -m dbt deps --profiles-dir .
+          dbt deps --profiles-dir .
 
       - name: Run dbt Data Transformations
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: |
-          python -m dbt run --target prod --profiles-dir .
+          dbt run --target prod --profiles-dir .
 
       - name: Run Data Quality Tests
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: |
-          python -m dbt test --target prod --profiles-dir .
+          dbt test --target prod --profiles-dir .
 
       - name: Generate Lineage Documentation
         if: always()
         env:
           MOTHERDUCK_TOKEN: ${{ secrets.MOTHERDUCK_TOKEN }}
         run: |
-          python -m dbt docs generate --profiles-dir .
+          dbt docs generate --profiles-dir .
