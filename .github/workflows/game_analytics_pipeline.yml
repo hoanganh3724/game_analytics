@@ -54,3 +54,9 @@ jobs:
         with:
           name: dbt-documentation
           path: target/
+      - name: Upload dbt Logs Artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dbt-execution-logs
+          path: logs/
