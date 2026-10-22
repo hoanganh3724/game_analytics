@@ -1,0 +1,10 @@
+game_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: 'C:/Users/LENOVO/Downloads/DA2/game_analytics/game_analytics.duckdb'
+
+    prod:
+      type: duckdb
+      path: 'md:game_analytics?token={{ env_var("MOTHERDUCK_TOKEN") }}'
