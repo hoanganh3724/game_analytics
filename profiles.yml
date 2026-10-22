@@ -7,4 +7,4 @@ game_analytics:
 
     prod:
       type: duckdb
-      path: 'md:game_analytics?token={{ env_var("MOTHERDUCK_TOKEN") }}'
+      path: 'md:game_analytics_db?token={{ env_var("MOTHERDUCK_TOKEN") }}'

@@ -2,7 +2,7 @@ version: 2
 
 sources:
   - name: bronze_raw
-    database: game_analytics
+    database: game_analytics_db
     schema: bronze_raw
     tables:
       - name: level_start
