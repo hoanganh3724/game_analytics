@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: dim_users
+  - name: dim_users_devices
     description: "Bảng chiều hồ sơ người chơi"
     columns:
       - name: user_pseudo_id
@@ -31,7 +31,7 @@ models:
           - not_null
           - relationships:
               arguments:
-                to: ref('dim_users')
+                to: ref('dim_users_devices')
                 field: user_pseudo_id
       - name: metric_date
         tests:

@@ -8,7 +8,7 @@ WITH user_cohort AS (
         user_pseudo_id,
         first_seen_date AS cohort_date,
         primary_os_version
-    FROM {{ ref('dim_users') }}
+    FROM {{ ref('dim_users_devices') }}
 ),
 user_activity AS (
     SELECT DISTINCT

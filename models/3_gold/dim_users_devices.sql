@@ -1,4 +1,7 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    schema='silver'
+) }}
 
 WITH user_first_seen AS (
     SELECT 
@@ -8,6 +11,7 @@ WITH user_first_seen AS (
     FROM {{ ref('int_level_gameplay') }} 
     GROUP BY user_pseudo_id
 ),
+
 user_devices AS (
     SELECT 
         user_pseudo_id,
@@ -17,6 +21,7 @@ user_devices AS (
     WHERE mobile_brand IS NOT NULL
     GROUP BY user_pseudo_id
 )
+
 SELECT
     f.user_pseudo_id,
     f.first_seen_time,
