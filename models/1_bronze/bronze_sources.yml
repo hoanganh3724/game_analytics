@@ -2,9 +2,8 @@ version: 2
 
 sources:
   - name: bronze_raw
-    description: "Nguồn dữ liệu Parquet thô đã phân vùng từ ổ đĩa local"
-    meta:
-      external_location: "C:/Users/LENOVO/Downloads/DA2/parquet_daily/{name}/*/*.parquet"
+    database: game_analytics
+    schema: bronze_raw
     tables:
       - name: level_start
       - name: level_end

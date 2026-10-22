@@ -3,7 +3,7 @@ game_analytics:
   outputs:
     dev:
       type: duckdb
-      path: 'C:/Users/LENOVO/Downloads/DA2/game_analytics/game_analytics.duckdb'
+      path: 'game_analytics.duckdb'
 
     prod:
       type: duckdb
