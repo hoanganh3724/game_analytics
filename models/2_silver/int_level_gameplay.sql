@@ -1,38 +1,56 @@
-{{ config(materialized='table') }}
-
-WITH level_starts AS (
-    SELECT
-        user_pseudo_id,
-        CAST(TRY_CAST(ga_session_id AS DOUBLE) AS BIGINT) AS session_id,
-        CAST(level_index AS VARCHAR) AS level_id,
-        event_datetime AS start_time,
-        event_timestamp AS start_timestamp
+WITH start_events AS (
+    SELECT *
     FROM {{ ref('stg_level_start') }}
+    QUALIFY ROW_NUMBER() OVER (
+        PARTITION BY user_pseudo_id, event_timestamp 
+        ORDER BY event_timestamp ASC
+    )
 ),
-level_ends AS (
-    SELECT
-        user_pseudo_id,
-        CAST(TRY_CAST(ga_session_id AS DOUBLE) AS BIGINT) AS session_id,
-        CAST(level_index AS VARCHAR) AS level_id,
-        event_datetime AS end_time,
-        event_timestamp AS end_timestamp
+
+end_events AS (
+    SELECT *
     FROM {{ ref('stg_level_end') }}
+    QUALIFY ROW_NUMBER() OVER (
+        PARTITION BY user_pseudo_id, event_timestamp 
+        ORDER BY event_timestamp ASC
+    )
 )
+
 SELECT
     s.user_pseudo_id,
-    s.session_id,
+    s.player_id,
+    s.ga_session_id,
+    s.ga_session_number,
     s.level_id,
-    s.start_time,
-    e.end_time,
-    DATEDIFF('second', s.start_time, e.end_time) AS play_duration_seconds,
-    CASE 
-        WHEN e.end_time IS NOT NULL THEN 'completed'
-        ELSE 'dropped_out' 
-    END AS final_result,
-    CASE WHEN e.end_time IS NULL THEN TRUE ELSE FALSE END AS is_dropped_out
-FROM level_starts s
-LEFT JOIN level_ends e
+    s.level_index,
+    s.attempt,
+    s.event_timestamp AS start_timestamp,
+    s.event_date AS start_date,
+    e.event_timestamp AS end_timestamp,
+    e.event_date AS end_date,
+    e.status,
+    e.duration_seconds,
+    COALESCE(e.revive_count, 0) AS revive_count,
+    COALESCE(e.booster_0, 0) AS booster_0,
+    COALESCE(e.booster_1, 0) AS booster_1,
+    COALESCE(e.booster_2, 0) AS booster_2,
+    COALESCE(e.booster_3, 0) AS booster_3,
+    e.unsolved_items,
+    e.total_items,
+    e.move_count,
+    s.country,
+    s.city,
+    s.device_operating_system,
+    s.mobile_brand_name,
+    s.mobile_model_name,
+    s.app_version,
+    s.campaign,
+    s.media_source,
+    s.ab_test
+FROM start_events s
+LEFT JOIN end_events e
     ON s.user_pseudo_id = e.user_pseudo_id
-   AND s.session_id = e.session_id
    AND s.level_id = e.level_id
-   AND e.end_timestamp >= s.start_timestamp
+   AND s.level_index = e.level_index
+   AND s.attempt = e.attempt
+   AND e.event_timestamp >= s.event_timestamp

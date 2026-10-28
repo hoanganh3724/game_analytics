@@ -1,40 +1,34 @@
-{{ config(
-    materialized='table',
-    schema='gold'
-) }}
+{{ config(materialized='table') }}
 
-WITH all_user_events AS (
-    SELECT user_pseudo_id, start_time AS event_time FROM {{ ref('int_level_gameplay') }} WHERE user_pseudo_id IS NOT NULL
-    UNION ALL
-    SELECT user_pseudo_id, purchase_time AS event_time FROM {{ ref('int_in_app_purchase') }} WHERE user_pseudo_id IS NOT NULL
-    UNION ALL
-    SELECT user_pseudo_id, impression_time AS event_time FROM {{ ref('int_ad_impression') }} WHERE user_pseudo_id IS NOT NULL
-),
-
-user_first_seen AS (
-    SELECT 
-        user_pseudo_id, 
-        MIN(event_time) AS first_seen_time,
-        CAST(MIN(event_time) AS DATE) AS first_seen_date
-    FROM all_user_events
-    GROUP BY user_pseudo_id
-),
-
-user_devices AS (
-    SELECT 
+WITH ranked_users AS (
+    SELECT
         user_pseudo_id,
-        MODE(mobile_brand) AS primary_device_brand,
-        MODE(os_version) AS primary_os_version
-    FROM {{ ref('int_in_app_purchase') }}
-    WHERE mobile_brand IS NOT NULL
-    GROUP BY user_pseudo_id
+        player_id,
+        country,
+        city,
+        device_operating_system,
+        mobile_brand_name,
+        mobile_model_name,
+        app_version,
+        campaign,
+        media_source,
+        start_timestamp,
+        ROW_NUMBER() OVER (PARTITION BY user_pseudo_id ORDER BY start_timestamp ASC) as rn
+    FROM {{ ref('int_level_gameplay') }}
 )
 
 SELECT
-    f.user_pseudo_id,
-    f.first_seen_time,
-    f.first_seen_date,
-    COALESCE(d.primary_device_brand, 'Unknown') AS primary_device_brand,
-    COALESCE(d.primary_os_version, 'Unknown') AS primary_os_version
-FROM user_first_seen f
-LEFT JOIN user_devices d ON f.user_pseudo_id = d.user_pseudo_id
+    user_pseudo_id,
+    MAX(player_id) AS player_id,
+    MIN(start_timestamp) AS first_seen_timestamp,
+    MAX(country) AS geo_country,
+    MAX(city) AS geo_city,
+    MAX(device_operating_system) AS device_operating_system,
+    MAX(mobile_brand_name) AS mobile_brand_name,
+    MAX(mobile_model_name) AS mobile_model_name,
+    MAX(app_version) AS app_version,
+    MAX(campaign) AS acquisition_campaign,
+    MAX(media_source) AS media_source
+FROM ranked_users
+WHERE rn = 1
+GROUP BY user_pseudo_id

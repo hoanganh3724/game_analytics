@@ -1,0 +1,45 @@
+==================================================
+1. DANH SÁCH CỘT RÁC (NULL 100% HOẶC '\N') NÊN DROP
+==================================================
+-> Table main.ad_impression: ['life', 'adset', 'adgroup_id']
+-> Table main.buy_resource: ['life', 'adset', 'adgroup_id', 'item_category', 'item_id', 'source_detail']
+-> Table main.earn_resource: ['life', 'adset', 'adgroup_id', 'item_category', 'item_id']
+-> Table main.in_app_purchase: ['life', 'adset', 'adgroup_id']
+-> Table main.level_end: ['life', 'adset', 'adgroup_id']
+-> Table main.level_start: ['life', 'adset', 'adgroup_id']
+-> Table main.spend_resource: ['life', 'adset', 'adgroup_id', 'item_category', 'item_id']
+-> Table main.winstreak_point_gained: ['life', 'adset', 'adgroup_id', 'level_id']
+-> Table main.winstreak_reward_claimed: ['life', 'adset', 'adgroup_id', 'event_instance_date']
+
+==================================================
+2. KIỂM TRA DỮ LIỆU TRÙNG LẶP (DUPLICATES)
+==================================================
+-> Duplicates in main.level_start: 11,702 rows
+-> Duplicates in main.level_end: 11,048 rows
+-> Duplicates in main.ad_impression: 4,956 rows
+-> Duplicates in main.in_app_purchase: 4 rows
+
+==================================================
+3. AUDIT KHÓA JOIN & ĐỘ KHỚP GA_SESSION_ID
+==================================================
+-> Sessions Match (Start vs End): Start = 129,267, End = 121,732, Matched = 121,732
+
+==================================================
+4. ĐO ĐỘ TRỄ THỜI GIAN GIỮA LEVEL_END VÀ WINSTREAK_POINTS
+==================================================
+-> Time Delay (seconds): Min = 7e-06, Avg = 7554.06s, Max = 1713497.282189s, P95 = 43553.58s
+
+==================================================
+5. MAPPING BETWEEN USER_PSEUDO_ID AND PLAYER_ID
+==================================================
+-> Unique user_pseudo_id: 19,876 | Unique player_id: 19,854
+
+==================================================
+6. A/B TEST SAMPLE STRINGS
+==================================================
+-> AB Test Samples: ['firebase_exp_abt_42:0,firebase_exp_abt_30:0,firebase_exp_abt_52:0,firebase_exp_abt_40:1,firebase_exp_abt_26:0', 'firebase_exp_abt_42:1,firebase_exp_abt_52:0,firebase_exp_abt_26:1,firebase_exp_abt_51:0,firebase_exp_abt_30:0,firebase_exp_abt_40:1,firebase_exp_abt_48:1', 'firebase_exp_abt_30:1,firebase_exp_abt_42:1,firebase_exp_abt_48:1,firebase_exp_abt_52:1,firebase_exp_abt_40:1,firebase_exp_abt_26:1,firebase_exp_abt_51:0', 'firebase_exp_abt_26:1,firebase_exp_abt_30:1,firebase_exp_abt_52:1,firebase_exp_abt_48:1,firebase_exp_abt_40:1,firebase_exp_abt_42:1,firebase_exp_abt_51:0', 'firebase_exp_abt_52:0,firebase_exp_abt_40:1,firebase_exp_abt_48:1,firebase_exp_abt_42:0,firebase_exp_abt_26:0,firebase_exp_abt_51:1,firebase_exp_abt_30:0']
+
+==================================================
+7. SPEND RESOURCE SOURCES
+==================================================
+-> Spend Sources: ['level_booster_REMOVE_ITEM', 'level_booster_EXTRA_CAPACITY', 'level_booster_UNDO', 'heart_refill', 'level_play', 'revive', 'level_booster_SHUFFLE']

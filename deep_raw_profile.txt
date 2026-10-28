@@ -1,0 +1,1176 @@
+
+==================================================
+TABLE: main.ad_impression
+==================================================
+Total Rows: 534,798
+
+📌 Cột: [event_date] | Type: DATE | Unique: 27 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-24
+   --> Top values: ['2026-08-09': 48,413, '2026-08-12': 47,188, '2026-08-11': 46,911, '2026-08-10': 46,589, '2026-08-08': 42,302]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 529,842 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785394481015170 | Max = 1787623024172158
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 12,935 | Nulls: 0 (0.0%)
+   --> Top values: ['1f3c147a0e961256482ac9a0dab33e4a': 1,822, 'c064e9e38404860805c77bc16e256d7e': 1,288, '63f9418b99449f12e401afcb8b616e89': 1,068, 'b711dc3f0bbfb6037d089a16488bb1d4': 1,024, '989EE511B59545BC82F6C63C9AD5FABD': 898]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 12,886 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780663541294000 | Max = 1787201689061000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 95 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 277,754, 'Apple': 142,969, 'Google': 31,601, 'Xiaomi': 25,888, 'Motorola': 18,690]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,280 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 9,693, 'iPad (10th gen)': 7,407, 'iPhone 17 Pro Max': 7,388, 'SM-S928U': 7,290, 'iPhone 15': 6,781]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 66 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 255,144, 'iOS 26.5.2': 67,302, 'iOS 26.6': 46,612, 'Android 15': 34,951, 'Android 13': 29,681]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 3,384 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 400,196, '4D6601B0-555E-4CF0-BBBB-D2DE00CB360F': 898, 'B0E9972F-06EF-4269-AED4-BB424B1D1B54': 820, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 805, '49C6A3F8-6A8B-4929-8824-6BF0EE999346': 707]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 9,320 | Nulls: 134,605 (25.17%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 7,617, '0ff421b1-d21e-4426-8468-7948d593e492': 1,822, '07808dad-ac8e-4c3c-93de-f7f24a29dd87': 1,500, '1124830a-ce42-47b6-a114-f444735e0796': 1,288, 'e1d4f415-4bbf-4b9e-b50a-b9eda8e17dc4': 1,024]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 151,767, '-14400': 114,834, '3600': 96,535, '-18000': 75,384, '-25200': 36,434]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 67 | Nulls: 253 (0.05%)
+   --> Top values: ['United States': 225,953, 'Germany': 97,487, 'United Kingdom': 96,694, 'France': 51,051, 'Canada': 30,062]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 6,741 | Nulls: 253 (0.05%)
+   --> Top values: ['\N': 38,916, 'London': 11,072, 'Berlin': 5,051, 'Paris': 4,810, 'New York': 3,394]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 534,798]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 391,829, 'iTunes': 142,961, 'manual_install': 8]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 14,507 (2.71%)
+   --> Top values: ['(direct)': 475,491, '\N': 44,800]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 475,491, '\N': 44,800, 'organic': 14,507]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 475,491, '\N': 44,800, 'google-play': 13,757, 'google': 750]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 391,829, 'IOS': 142,969]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 12,920 | Nulls: 0 (0.0%)
+   --> Top values: ['1785809970791-7625813796588104604': 1,822, '1785470343919-8845912474909333331': 1,500, '1785394117630-2376031125192352561': 1,288, '1785639641729-7330025342084655382': 1,024, '1784946013699-4660105': 898]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 12,908 | Nulls: 0 (0.0%)
+   --> Top values: ['bq3BqWr2vza5lINktrYQdsMG3E02': 1,822, '3PMBXTSMUqbe1upmxVpNYK9FsBt2': 1,500, 'GLmKTuwkp2a6Gpna0RJpkDyYLLn2': 1,288, 'UB9hEdtQglPLEVH5C81XcmsUme53': 1,024, 'EzAhRYQKGGYlUVQbjshu4OSZ00J2': 898]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,484 | Nulls: 0 (0.0%)
+   --> Range: Min = 2 | Max = 1712
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 117 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 134
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,824 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1838
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 836 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 835
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 3,205 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2110580
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 12,703 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2231280
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 534,798]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 400,279, 'Organic': 123,411, '\N': 11,108]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 400,279, '\N': 134,519]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 7 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 309,567, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 137,478, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 85,813, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 1,322, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 537]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 534,798]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 534,798]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 415,192 | Nulls: 4,918 (0.92%)
+   --> Top values: ['firebase_exp_abt_30:0,firebase_exp_abt_34:0,firebase_exp_abt_26:1': 667, 'firebase_exp_abt_26:1,firebase_exp_abt_34:0,firebase_exp_abt_30:0': 663, 'firebase_exp_abt_34:0,firebase_exp_abt_26:1,firebase_exp_abt_30:0': 606, 'firebase_exp_abt_30:0,firebase_exp_abt_26:1,firebase_exp_abt_34:0': 591, 'firebase_exp_abt_26:1,firebase_exp_abt_30:1,firebase_exp_abt_34:0': 584]
+
+📌 Cột: [ad_platform] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['appLovin': 534,798]
+
+📌 Cột: [ad_source] | Type: VARCHAR | Unique: 8 | Nulls: 0 (0.0%)
+   --> Top values: ['AppLovin': 319,701, 'Unity Ads': 121,529, 'Google AdMob': 57,289, 'Mintegral': 20,592, 'Liftoff Monetize': 9,748]
+
+📌 Cột: [ad_format] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['REWARDED': 293,985, 'INTER': 240,813]
+
+📌 Cột: [ad_unit_name] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['6860ee50e726c9b3': 217,154, '529165a474e84377': 174,675, '2873a1e20b768bdd': 76,831, '9f4bad1d4345650b': 66,138]
+
+📌 Cột: [placement] | Type: VARCHAR | Unique: 5 | Nulls: 0 (0.0%)
+   --> Top values: ['win_inter': 240,813, 'rv_revive': 215,088, 'rv_winBonus': 46,923, 'rv_booster': 27,863, 'rv_extralife': 4,111]
+
+📌 Cột: [currency] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['USD': 534,798]
+
+📌 Cột: [value] | Type: DOUBLE | Unique: 508,171 | Nulls: 0 (0.0%)
+   --> Range: Min = 0.0 | Max = 5.0
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 92,895 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785387203 | Max = 1787622453
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 334 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 349
+
+
+==================================================
+TABLE: main.buy_resource
+==================================================
+Total Rows: 7,979
+
+📌 Cột: [event_date] | Type: DATE | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-31 | Max = 2026-08-25
+   --> Top values: ['2026-08-08': 757, '2026-08-10': 745, '2026-08-09': 716, '2026-08-12': 672, '2026-08-06': 600]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 7,875 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785512485456200 | Max = 1787642023440852
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 586 | Nulls: 0 (0.0%)
+   --> Top values: ['a020a7482f29bf14b93d88fdbc4273ec': 116, '7eb82807b7e8eebbbd1f504cd6a2eb4d': 114, 'b11f581bc14f2efe314832e798be922a': 110, '7ac7f9b881cfcef1bf7f3fe7d18e714a': 109, '8ffdb5d34237df382ec42cec3fc76aec': 107]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 584 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780890442327000 | Max = 1786928503818000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 24 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 4,713, 'Apple': 2,011, 'Google': 566, 'Xiaomi': 188, 'Motorola': 154]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 265 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 269, 'SM-S916U': 230, 'SM-S911U': 230, 'iPhone 16 Pro Max': 210, 'SM-S928B': 204]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 22 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 4,052, 'iOS 26.5.2': 901, 'iOS 26.6': 770, 'Android 17': 484, 'Android 15': 468]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 159 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 6,049, '916DB69A-859F-4C18-B7D3-6691119E4D8C': 94, '4D868096-E00C-4217-8113-DA5EB88254C9': 89, '8106D9B9-54D3-4831-8097-2ED5267AB686': 80, '57368094-59BB-45CD-A92F-382A2FAD31C5': 76]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 422 | Nulls: 1,930 (24.19%)
+   --> Top values: ['0818e7fa-05bb-40fd-8905-6c2ac2c0a5f0': 116, 'c4042020-4c11-4b32-991c-b5edcd5963b6': 114, '041014e2-2843-4f50-a292-9e906c1eb57f': 110, 'c450c6ec-6a38-4431-8621-f2ae67ac16fc': 109, '7c6c1ebc-f118-4ff0-89e8-8b4e3e4c8a84': 107]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 12 | Nulls: 0 (0.0%)
+   --> Range: Min = -28800 | Max = 32400
+   --> Top values: ['-14400': 2,293, '-18000': 1,800, '3600': 1,535, '-25200': 920, '7200': 815]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 11 | Nulls: 0 (0.0%)
+   --> Top values: ['United States': 4,892, 'United Kingdom': 1,544, 'Germany': 705, 'Canada': 426, 'Japan': 156]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 535 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 391, 'Seattle': 165, 'Fort Worth': 136, 'Fairchance': 107, 'Oklahoma City': 106]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 7,979]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 5,968, 'iTunes': 2,011]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 150 (1.88%)
+   --> Top values: ['(direct)': 7,022, '\N': 807]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 7,022, '\N': 807, 'organic': 150]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 7,022, '\N': 807, 'google-play': 141, 'google': 9]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 5,968, 'IOS': 2,011]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 584 | Nulls: 0 (0.0%)
+   --> Top values: ['1781289175202-3965708526626355965': 116, '1785557623954-1056150533940059357': 114, '1785024735721-3060953229752447721': 110, '1785549335064-3484139315131805109': 109, '1785387749961-7678467977052106802': 107]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 584 | Nulls: 0 (0.0%)
+   --> Top values: ['6m4rFSNs9tTtcoBwYRgNwLs5Hqr2': 116, 'kb0c9ueiLKW9ygXgi7zfmyuYMy22': 114, '0uQwkm1TVcQZZ6znbefmPWYjssu2': 110, 'kgYRkvKRQgYx9jIQgXLLxr0v7dE3': 109, 'WBqdU4bWNEUNlPvTK3lZwJOPdnn2': 107]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 548 | Nulls: 0 (0.0%)
+   --> Range: Min = 9 | Max = 2957
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 142 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 343 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 906
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 291 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 477
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 1,039 | Nulls: 0 (0.0%)
+   --> Range: Min = 20 | Max = 58040
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 2,540 | Nulls: 0 (0.0%)
+   --> Range: Min = 1840 | Max = 1235920
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 6,229, 'Organic': 1,508, '\N': 242]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 6,229, '\N': 1,750]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 5 | Nulls: 0 (0.0%)
+   --> Top values: ['TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 3,844, '\N': 2,524, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 1,458, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 151, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 2]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 6,646 | Nulls: 173 (2.17%)
+   --> Top values: ['firebase_exp_abt_57:1': 21, 'firebase_exp_abt_34:0,firebase_exp_abt_26:1,firebase_exp_abt_30:1': 17, 'firebase_exp_abt_26:0,firebase_exp_abt_34:0,firebase_exp_abt_30:0': 17, 'firebase_exp_abt_26:0,firebase_exp_abt_34:1,firebase_exp_abt_30:0': 16, 'firebase_exp_abt_30:1,firebase_exp_abt_34:0,firebase_exp_abt_26:0': 16]
+
+📌 Cột: [item_category] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [item_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 4,989, 'battle_pass_premium': 2,990]
+
+📌 Cột: [source_detail] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 7,979]
+
+📌 Cột: [source_id] | Type: VARCHAR | Unique: 68 | Nulls: 0 (0.0%)
+   --> Top values: ['small_pack': 1,720, 'dont_stop_now': 1,194, 'medium_pack': 623, 'starter_pack': 435, 'coin_pack_1': 387]
+
+📌 Cột: [value] | Type: BIGINT | Unique: 25 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 50000
+   --> Top values: ['2': 2,676, '1': 1,471, '1000': 632, '3': 457, '500': 409]
+
+📌 Cột: [value_balance] | Type: BIGINT | Unique: 1,051 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 58040
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 1,823 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785511769 | Max = 1787640045
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 143 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 170
+
+
+==================================================
+TABLE: main.earn_resource
+==================================================
+Total Rows: 1,039,086
+
+📌 Cột: [event_date] | Type: DATE | Unique: 28 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-25
+   --> Top values: ['2026-08-11': 107,593, '2026-08-09': 103,613, '2026-08-10': 91,601, '2026-08-12': 90,813, '2026-08-07': 85,719]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 1,029,581 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785394155478884 | Max = 1787644748234766
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 19,345 | Nulls: 0 (0.0%)
+   --> Top values: ['1f3c147a0e961256482ac9a0dab33e4a': 1,347, '38AF78B5616D44C6B783B22606078BD6': 1,056, '67f394e89491520ecb1d9b1acb1ce9ad': 1,040, 'FE49DDC1EE9B4FDAA90C466AA8D9D1EF': 982, '857ddaf1e4cf4c0bb5c701239bf5b185': 907]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 19,286 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780663541294000 | Max = 1787465152635000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 104 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 526,396, 'Apple': 300,651, 'Google': 59,946, 'Xiaomi': 49,125, 'Motorola': 34,081]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,558 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 20,734, 'iPhone 17 Pro Max': 17,966, 'SM-S928U': 16,268, 'iPhone 16 Pro Max': 15,061, 'iPhone 13': 14,821]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 78 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 484,033, 'iOS 26.5.2': 149,400, 'iOS 26.6': 96,178, 'Android 15': 61,739, 'Android 14': 55,234]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 5,247 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 758,395, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 1,056, '8106D9B9-54D3-4831-8097-2ED5267AB686': 982, '4D868096-E00C-4217-8113-DA5EB88254C9': 896, 'BC486F9B-C6EB-48EF-B4D6-EE8C393C04C8': 740]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 13,747 | Nulls: 280,717 (27.02%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 14,408, '0ff421b1-d21e-4426-8468-7948d593e492': 1,347, '36eacdce-b2b2-4af5-ad62-2fe405832399': 1,040, '07808dad-ac8e-4c3c-93de-f7f24a29dd87': 971, 'bd34ebb7-aec4-46ff-aebb-74fad4fbc3c6': 959]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 269,338, '-14400': 243,112, '3600': 178,624, '-18000': 159,166, '-25200': 78,135]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 88 | Nulls: 489 (0.05%)
+   --> Top values: ['United States': 474,127, 'United Kingdom': 178,678, 'Germany': 171,515, 'France': 92,909, 'Canada': 60,221]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 8,187 | Nulls: 489 (0.05%)
+   --> Top values: ['\N': 71,028, 'London': 21,344, 'Paris': 9,808, 'Berlin': 9,778, 'New York': 6,757]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 1,039,086]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 738,435, 'iTunes': 300,618, 'manual_install': 33]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 15,518 (1.49%)
+   --> Top values: ['(direct)': 593,650, '\N': 429,918]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 593,650, '\N': 429,918, 'organic': 15,518]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 593,650, '\N': 429,918, 'google-play': 15,053, 'google': 465]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 738,435, 'IOS': 300,651]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 19,352 | Nulls: 0 (0.0%)
+   --> Top values: ['1785809970791-7625813796588104604': 1,347, '1785630485402-1241193': 1,056, '1785632008999-8106995': 982, '1785470343919-8845912474909333331': 971, '1785216285510-4868096': 896]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 19,313 | Nulls: 0 (0.0%)
+   --> Top values: ['hyE4KiG4BfYvdloYARNV1rXOscC2': 1,378, 'bq3BqWr2vza5lINktrYQdsMG3E02': 1,347, '\N': 1,143, 'M6sCfZ0VPBZf8qsi67hcYooxAot1': 1,056, '48Emy31GMBMobyKHEOg2e1SAplr1': 982]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,941 | Nulls: 0 (0.0%)
+   --> Range: Min = 2 | Max = 2971
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 140 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,656 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1837
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 835 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 834
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 3,790 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2110580
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 16,119 | Nulls: 0 (0.0%)
+   --> Range: Min = 40 | Max = 2231280
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,039,086]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 589,389, '\N': 267,501, 'Organic': 182,196]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 589,387, '\N': 449,697, 'restricted': 2]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 8 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 692,578, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 213,325, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 130,931, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 1,266, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 887]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,039,086]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,039,086]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 727,660 | Nulls: 25,271 (2.43%)
+   --> Top values: ['firebase_exp_abt_57:1': 3,209, 'firebase_exp_abt_57:0': 3,122, 'firebase_exp_abt_30:0,firebase_exp_abt_26:1,firebase_exp_abt_34:0': 1,113, 'firebase_exp_abt_26:1,firebase_exp_abt_34:0,firebase_exp_abt_30:0': 1,099, 'firebase_exp_abt_30:0,firebase_exp_abt_34:0,firebase_exp_abt_26:0': 1,073]
+
+📌 Cột: [item_category] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,039,086]
+
+📌 Cột: [item_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,039,086]
+
+📌 Cột: [source] | Type: VARCHAR | Unique: 15 | Nulls: 0 (0.0%)
+   --> Top values: ['level_pass': 867,948, 'battle_pass': 55,121, 'ads_x2': 44,145, 'win_streak': 25,873, 'ads_booster_EXTRA_CAPACITY': 17,508]
+
+📌 Cột: [source_id] | Type: VARCHAR | Unique: 18,418 | Nulls: 0 (0.0%)
+   --> Top values: ['2': 15,465, '2_2': 11,991, '3_3': 11,941, '4_4': 11,923, '5_5': 11,806]
+
+📌 Cột: [value] | Type: BIGINT | Unique: 14 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 10000
+   --> Top values: ['40': 867,948, '1': 78,064, '80': 44,145, '100': 22,568, '50': 16,864]
+
+📌 Cột: [value_balance] | Type: BIGINT | Unique: 3,743 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 2110580
+
+📌 Cột: [ga_session_id] | Type: VARCHAR | Unique: 111,778 | Nulls: 0 (0.0%)
+   --> Top values: ['1786537611': 204, '1786086101': 191, '1786370818': 189, '1786327182': 187, '1786449608': 186]
+
+📌 Cột: [ga_session_number] | Type: VARCHAR | Unique: 342 | Nulls: 0 (0.0%)
+   --> Top values: ['1': 279,376, '2': 114,493, '3': 69,933, '4': 50,282, '5': 40,807]
+
+
+==================================================
+TABLE: main.in_app_purchase
+==================================================
+Total Rows: 1,319
+
+📌 Cột: [event_date] | Type: DATE | Unique: 24 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-31 | Max = 2026-08-24
+   --> Top values: ['2026-08-08': 128, '2026-08-09': 123, '2026-08-10': 109, '2026-08-12': 106, '2026-08-07': 103]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 1,315 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785518400887994 | Max = 1787617010265972
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 455 | Nulls: 0 (0.0%)
+   --> Top values: ['e51d3ff3b59c128e544d984305d8b574': 26, 'b11f581bc14f2efe314832e798be922a': 22, 'a020a7482f29bf14b93d88fdbc4273ec': 22, '1d18ffb8b2bcaf0210d1346ce986c91b': 21, '7eb82807b7e8eebbbd1f504cd6a2eb4d': 19]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 453 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780890442327000 | Max = 1786928503818000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 24 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 998, 'Google': 116, 'Xiaomi': 57, 'Motorola': 40, 'Honor': 21]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 227 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 51, 'SM-S911U': 44, 'SM-S916U': 42, 'SM-S928B': 36, 'SM-S928U': 31]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 15 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 882, 'Android 15': 114, 'Android 13': 95, 'Android 17': 94, 'Android 14': 65]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 10 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,307, '57368094-59BB-45CD-A92F-382A2FAD31C5': 3, '0EEA7475-F4E5-48EB-8619-5559ACC74C98': 2, '389C3CD6-9EF5-4250-962E-2640F76A3E25': 1, 'A8DF2C0B-B05F-43D3-88F9-35612C38E7BA': 1]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 439 | Nulls: 12 (0.91%)
+   --> Top values: ['689876ea-53d4-4825-b776-280bd61549b0': 26, '0818e7fa-05bb-40fd-8905-6c2ac2c0a5f0': 22, '041014e2-2843-4f50-a292-9e906c1eb57f': 22, 'd86cb938-a699-44f0-9626-747cc636ad1b': 21, 'c4042020-4c11-4b32-991c-b5edcd5963b6': 19]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 11 | Nulls: 0 (0.0%)
+   --> Range: Min = -25200 | Max = 32400
+   --> Top values: ['-14400': 338, '3600': 310, '-18000': 264, '7200': 194, '-25200': 128]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 12 | Nulls: 0 (0.0%)
+   --> Top values: ['United States': 717, 'United Kingdom': 311, 'Germany': 170, 'Canada': 61, 'Japan': 24]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 401 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 61, 'London': 33, 'Hoyerswerda': 26, 'Dallas': 23, 'Seattle': 22]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 1,319]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 1,307, 'iTunes': 12]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 39 (2.96%)
+   --> Top values: ['(direct)': 1,141, '\N': 139]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 1,141, '\N': 139, 'organic': 39]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 1,141, '\N': 139, 'google-play': 37, 'google': 2]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 1,307, 'IOS': 12]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 453 | Nulls: 0 (0.0%)
+   --> Top values: ['1784902250743-8063032443498570911': 26, '1785024735721-3060953229752447721': 22, '1781289175202-3965708526626355965': 22, '1785457183283-1981913012163399163': 21, '1785557623954-1056150533940059357': 19]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 453 | Nulls: 0 (0.0%)
+   --> Top values: ['231vWjxC1mUwj8qjybOADyoh7gK2': 26, '0uQwkm1TVcQZZ6znbefmPWYjssu2': 22, '6m4rFSNs9tTtcoBwYRgNwLs5Hqr2': 22, 'Q2D66mU02ZWI1qGcwNIvSvrdRCU2': 21, 'kb0c9ueiLKW9ygXgi7zfmyuYMy22': 19]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 425 | Nulls: 0 (0.0%)
+   --> Range: Min = 15 | Max = 2957
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 69 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 151
+   --> Top values: ['0': 272, '1': 158, '2': 111, '3': 109, '4': 86]
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 251 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 906
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 220 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 477
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 266 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 33090
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 1,177 | Nulls: 0 (0.0%)
+   --> Range: Min = 600 | Max = 1226920
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,319]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 1,045, 'Organic': 231, '\N': 43]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 1,045, '\N': 274]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 844, '\N': 438, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 29, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 8]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,319]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,319]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 1,252 | Nulls: 19 (1.44%)
+   --> Top values: ['firebase_exp_abt_34:0,firebase_exp_abt_26:1,firebase_exp_abt_30:1': 5, 'firebase_exp_abt_26:1,firebase_exp_abt_30:0,firebase_exp_abt_34:0': 5, 'firebase_exp_abt_30:1,firebase_exp_abt_34:0,firebase_exp_abt_26:0': 5, 'firebase_exp_abt_34:1,firebase_exp_abt_30:1,firebase_exp_abt_26:0': 5, 'firebase_exp_abt_34:1,firebase_exp_abt_30:0,firebase_exp_abt_26:0': 4]
+
+📌 Cột: [product_id] | Type: VARCHAR | Unique: 12 | Nulls: 0 (0.0%)
+   --> Top values: ['com.twh010.farm.sort.small_pack': 326, 'com.twh010.farm.sort.coin_pack_2': 215, 'com.twh010.farm.sort.coin_pack_1': 212, 'com.twh010.farm.sort.dont_stop_now': 144, 'com.twh010.farm.sort.medium_pack': 92]
+
+📌 Cột: [event_value_in_usd] | Type: DOUBLE | Unique: 282 | Nulls: 0 (0.0%)
+   --> Range: Min = 0.0 | Max = 49.99
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 1,092 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785511769 | Max = 1787611415
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 133 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 170
+
+
+==================================================
+TABLE: main.level_end
+==================================================
+Total Rows: 1,213,785
+
+📌 Cột: [event_date] | Type: DATE | Unique: 27 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-24
+   --> Top values: ['2026-08-11': 124,284, '2026-08-09': 118,843, '2026-08-12': 107,108, '2026-08-10': 106,612, '2026-08-07': 97,963]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 1,202,736 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785393930292697 | Max = 1787622965524158
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 19,566 | Nulls: 0 (0.0%)
+   --> Top values: ['38AF78B5616D44C6B783B22606078BD6': 1,845, '1f3c147a0e961256482ac9a0dab33e4a': 1,168, 'C7054B0A5C3C4F3F9B555A1D9E1233AF': 1,143, '1789AF76D89A4ABB827671B4E5709A85': 1,067, '85fc1d65e7335e189bc282eb63f159a8': 1,065]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 19,505 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780663541294000 | Max = 1787465152635000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 105 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 609,309, 'Apple': 354,149, 'Google': 71,197, 'Xiaomi': 58,405, 'Motorola': 38,277]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,564 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 22,825, 'iPhone 17 Pro Max': 20,179, 'SM-S928U': 17,834, 'iPhone 16 Pro Max': 17,798, 'iPhone 13': 17,435]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 81 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 562,541, 'iOS 26.5.2': 176,997, 'iOS 26.6': 111,901, 'Android 15': 71,867, 'Android 14': 65,411]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 5,302 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 882,968, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 1,845, 'C5C96189-80F4-4245-B0FB-E13964746888': 1,143, '4E410D2B-335D-4739-AFD0-0A3166309A71': 1,067, '8106D9B9-54D3-4831-8097-2ED5267AB686': 956]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 13,898 | Nulls: 330,842 (27.26%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 16,884, '07808dad-ac8e-4c3c-93de-f7f24a29dd87': 1,194, '0ff421b1-d21e-4426-8468-7948d593e492': 1,168, 'a5eff33b-0fec-4f44-b293-d4226ef9238f': 1,065, 'e1d4f415-4bbf-4b9e-b50a-b9eda8e17dc4': 1,047]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 320,006, '-14400': 273,985, '3600': 215,965, '-18000': 177,579, '-25200': 91,453]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 88 | Nulls: 610 (0.05%)
+   --> Top values: ['United States': 533,409, 'United Kingdom': 215,840, 'Germany': 202,497, 'France': 111,184, 'Canada': 71,649]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 8,290 | Nulls: 610 (0.05%)
+   --> Top values: ['\N': 82,868, 'London': 25,163, 'Paris': 11,797, 'Berlin': 11,544, 'New York': 7,367]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 1,213,785]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 859,636, 'iTunes': 354,115, 'manual_install': 34]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 18,862 (1.55%)
+   --> Top values: ['(direct)': 743,904, '\N': 451,019]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 743,904, '\N': 451,019, 'organic': 18,862]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 743,904, '\N': 451,019, 'google-play': 18,247, 'google': 615]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 859,636, 'IOS': 354,149]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 19,576 | Nulls: 0 (0.0%)
+   --> Top values: ['1785630485402-1241193': 1,845, '1785470343919-8845912474909333331': 1,194, '1785809970791-7625813796588104604': 1,168, '1786154147736-5961898': 1,143, '1785400508881-4410233': 1,067]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 19,534 | Nulls: 0 (0.0%)
+   --> Top values: ['M6sCfZ0VPBZf8qsi67hcYooxAot1': 1,845, 'hyE4KiG4BfYvdloYARNV1rXOscC2': 1,587, '3PMBXTSMUqbe1upmxVpNYK9FsBt2': 1,194, 'bq3BqWr2vza5lINktrYQdsMG3E02': 1,168, '4kndpAQcqNVIjWtMU4AHIjaYAPf2': 1,143]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,948 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 2971
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 141 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,679 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1837
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 835 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 834
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 3,672 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2110540
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 15,271 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2231240
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,213,785]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 714,215, '\N': 275,666, 'Organic': 223,904]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 714,213, '\N': 499,570, 'restricted': 2]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 8 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 795,469, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 255,569, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 160,225, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 1,631, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 795]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,213,785]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,213,785]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 832,500 | Nulls: 27,175 (2.24%)
+   --> Top values: ['firebase_exp_abt_57:1': 3,583, 'firebase_exp_abt_57:0': 3,553, 'firebase_exp_abt_30:0,firebase_exp_abt_26:1,firebase_exp_abt_34:0': 1,319, 'firebase_exp_abt_26:1,firebase_exp_abt_34:0,firebase_exp_abt_30:0': 1,301, 'firebase_exp_abt_34:0,firebase_exp_abt_30:0,firebase_exp_abt_26:1': 1,287]
+
+📌 Cột: [level_id] | Type: BIGINT | Unique: 500 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 500
+
+📌 Cột: [level_index] | Type: BIGINT | Unique: 1,947 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 2970
+
+📌 Cột: [attempt] | Type: BIGINT | Unique: 117 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 118
+
+📌 Cột: [status] | Type: BIGINT | Unique: 4 | Nulls: 0 (0.0%)
+   --> Range: Min = -1 | Max = 2
+   --> Top values: ['1': 922,880, '0': 260,535, '2': 28,633, '-1': 1,737]
+
+📌 Cột: [playtime] | Type: BIGINT | Unique: 2,067 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 66981
+
+📌 Cột: [revive] | Type: BIGINT | Unique: 5 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 4
+   --> Top values: ['0': 980,094, '1': 225,780, '2': 7,167, '3': 717, '4': 27]
+
+📌 Cột: [booster_0] | Type: VARCHAR | Unique: 9 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,206,440, '1': 6,260, '2': 855, '3': 173, '4': 45]
+
+📌 Cột: [booster_1] | Type: VARCHAR | Unique: 11 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,187,342, '1': 23,126, '2': 2,510, '3': 584, '4': 142]
+
+📌 Cột: [booster_2] | Type: VARCHAR | Unique: 10 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,173,019, '1': 36,988, '2': 3,277, '3': 379, '4': 60]
+
+📌 Cột: [booster_3] | Type: VARCHAR | Unique: 12 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,188,591, '1': 24,738, '2': 373, '9': 21, '3': 19]
+
+📌 Cột: [unsolved_items] | Type: BIGINT | Unique: 22 | Nulls: 0 (0.0%)
+   --> Range: Min = -3 | Max = 22
+   --> Top values: ['0': 898,327, '10': 72,147, '9': 58,177, '8': 49,161, '11': 48,179]
+
+📌 Cột: [total_items] | Type: BIGINT | Unique: 15 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 14
+   --> Top values: ['10': 273,176, '9': 247,695, '8': 242,812, '11': 147,706, '12': 83,103]
+
+📌 Cột: [move] | Type: BIGINT | Unique: 105 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1410
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 122,135 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785387203 | Max = 1787622453
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 360 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 360
+
+
+==================================================
+TABLE: main.level_start
+==================================================
+Total Rows: 1,287,538
+
+📌 Cột: [event_date] | Type: DATE | Unique: 27 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-24
+   --> Top values: ['2026-08-11': 130,971, '2026-08-09': 125,490, '2026-08-12': 113,526, '2026-08-10': 113,223, '2026-08-07': 103,593]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 1,275,836 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785393864212978 | Max = 1787622952389489
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 19,889 | Nulls: 0 (0.0%)
+   --> Top values: ['1f3c147a0e961256482ac9a0dab33e4a': 2,361, '38AF78B5616D44C6B783B22606078BD6': 1,970, '87dc5c38702af9532d4238781db53b38': 1,389, '67f394e89491520ecb1d9b1acb1ce9ad': 1,312, '43bc0259e8df1f67613bff9f007d5170': 1,200]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 19,826 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780663541294000 | Max = 1787465152635000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 106 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 648,769, 'Apple': 372,560, 'Google': 75,685, 'Xiaomi': 61,970, 'Motorola': 41,530]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,570 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 24,047, 'iPhone 17 Pro Max': 21,370, 'SM-S928U': 18,968, 'iPhone 16 Pro Max': 18,905, 'iPhone 13': 18,503]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 81 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 598,702, 'iOS 26.5.2': 186,117, 'iOS 26.6': 117,732, 'Android 15': 78,850, 'Android 14': 69,161]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 5,403 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 939,630, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 1,970, 'C5C96189-80F4-4245-B0FB-E13964746888': 1,155, '4E410D2B-335D-4739-AFD0-0A3166309A71': 1,111, '8106D9B9-54D3-4831-8097-2ED5267AB686': 974]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 14,115 | Nulls: 347,936 (27.02%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 18,439, '0ff421b1-d21e-4426-8468-7948d593e492': 2,361, '11e9ad06-d575-4694-8fb1-eb8167fc5303': 1,389, '36eacdce-b2b2-4af5-ad62-2fe405832399': 1,312, '07808dad-ac8e-4c3c-93de-f7f24a29dd87': 1,229]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 340,539, '-14400': 290,651, '3600': 229,069, '-18000': 188,870, '-25200': 96,366]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 88 | Nulls: 626 (0.05%)
+   --> Top values: ['United States': 565,854, 'United Kingdom': 228,953, 'Germany': 215,738, 'France': 118,056, 'Canada': 75,385]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 8,445 | Nulls: 626 (0.05%)
+   --> Top values: ['\N': 88,357, 'London': 27,108, 'Paris': 12,492, 'Berlin': 12,214, 'New York': 7,784]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 1,287,538]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 914,978, 'iTunes': 372,521, 'manual_install': 39]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 20,559 (1.6%)
+   --> Top values: ['(direct)': 803,479, '\N': 463,500]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 803,479, '\N': 463,500, 'organic': 20,559]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 803,479, '\N': 463,500, 'google-play': 19,919, 'google': 640]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 914,978, 'IOS': 372,560]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 19,899 | Nulls: 0 (0.0%)
+   --> Top values: ['1785809970791-7625813796588104604': 2,361, '1785630485402-1241193': 1,970, '1784184788108-6689775959590340446': 1,389, '1785470343919-8845912474909333331': 1,229, '1786262970465-9107090628855325624': 1,200]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 19,855 | Nulls: 0 (0.0%)
+   --> Top values: ['bq3BqWr2vza5lINktrYQdsMG3E02': 2,361, 'M6sCfZ0VPBZf8qsi67hcYooxAot1': 1,970, 'hyE4KiG4BfYvdloYARNV1rXOscC2': 1,600, 'TXA9kDx5X1MJ0zWASu8FWDbAkVE3': 1,389, '3PMBXTSMUqbe1upmxVpNYK9FsBt2': 1,229]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,949 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 2971
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 141 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,730 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1837
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 835 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 834
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 3,683 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2110620
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 15,253 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2231320
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,287,538]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 766,626, '\N': 280,920, 'Organic': 239,992]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 766,623, '\N': 520,912, 'restricted': 3]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 8 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 839,695, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 274,490, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 170,580, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 1,796, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 871]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,287,538]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 1,287,538]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 878,351 | Nulls: 28,211 (2.19%)
+   --> Top values: ['firebase_exp_abt_57:1': 3,657, 'firebase_exp_abt_57:0': 3,644, 'firebase_exp_abt_26:1,firebase_exp_abt_34:0,firebase_exp_abt_30:0': 1,438, 'firebase_exp_abt_30:0,firebase_exp_abt_26:1,firebase_exp_abt_34:0': 1,386, 'firebase_exp_abt_34:0,firebase_exp_abt_30:0,firebase_exp_abt_26:1': 1,386]
+
+📌 Cột: [level_id] | Type: BIGINT | Unique: 500 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 500
+
+📌 Cột: [attempt] | Type: BIGINT | Unique: 118 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 118
+
+📌 Cột: [level_index] | Type: BIGINT | Unique: 1,949 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 2971
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 129,267 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785387203 | Max = 1787622453
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 360 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 360
+
+
+==================================================
+TABLE: main.spend_resource
+==================================================
+Total Rows: 172,791
+
+📌 Cột: [event_date] | Type: DATE | Unique: 28 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-25
+   --> Top values: ['2026-08-11': 17,150, '2026-08-09': 16,330, '2026-08-12': 15,520, '2026-08-10': 15,063, '2026-08-08': 14,009]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 171,126 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785394706551027 | Max = 1787644213621766
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 15,119 | Nulls: 0 (0.0%)
+   --> Top values: ['fb0267c01a31699b78424e461790da4d': 725, '7ac7f9b881cfcef1bf7f3fe7d18e714a': 548, '9039CE1CC6AE43C589568DC5201B5B6E': 532, '6ea11131714d60fce3e54b76149b1a21': 522, 'F6193364F75142A997668D8F9EFADDB8': 510]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 15,066 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780713598425000 | Max = 1787465152635000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 97 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 90,246, 'Apple': 46,161, 'Google': 10,974, 'Xiaomi': 7,860, 'Motorola': 6,117]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,371 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 3,691, 'iPhone 17 Pro Max': 2,913, 'SM-S928U': 2,548, 'iPhone 15': 2,541, 'iPad (10th gen)': 2,447]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 69 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 82,096, 'iOS 26.5.2': 21,936, 'iOS 26.6': 15,053, 'Android 15': 10,350, 'Android 13': 10,336]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 4,042 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 129,490, '57368094-59BB-45CD-A92F-382A2FAD31C5': 532, '4D868096-E00C-4217-8113-DA5EB88254C9': 510, '663CA4D4-C983-43BE-B468-F218D8F75058': 489, '8106D9B9-54D3-4831-8097-2ED5267AB686': 386]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 10,810 | Nulls: 43,304 (25.06%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 2,173, 'fd4fb81f-811b-41d6-88f9-eea6991ace5f': 725, 'c450c6ec-6a38-4431-8621-f2ae67ac16fc': 548, '6e6cb711-15b4-4819-8d57-11db4400d2c8': 522, '7c6c1ebc-f118-4ff0-89e8-8b4e3e4c8a84': 438]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 26 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 42,229, '-14400': 41,760, '3600': 30,855, '-18000': 27,713, '-25200': 12,870]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 74 | Nulls: 101 (0.06%)
+   --> Top values: ['United States': 81,767, 'United Kingdom': 30,849, 'Germany': 27,735, 'France': 13,747, 'Canada': 9,568]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 6,674 | Nulls: 101 (0.06%)
+   --> Top values: ['\N': 11,992, 'London': 3,525, 'Paris': 1,504, 'Berlin': 1,433, 'New York': 1,239]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 172,791]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 126,630, 'iTunes': 46,161]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 3,872 (2.24%)
+   --> Top values: ['(direct)': 116,306, '\N': 52,613]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 116,306, '\N': 52,613, 'organic': 3,872]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 116,306, '\N': 52,613, 'google-play': 3,759, 'google': 113]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 126,630, 'IOS': 46,161]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 15,107 | Nulls: 0 (0.0%)
+   --> Top values: ['1785549335064-3484139315131805109': 548, '1786324036256-5736809': 532, '1785029780203-5643388084478445194': 522, '1785216285510-4868096': 510, '1784481404102-6634498': 489]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 15,076 | Nulls: 0 (0.0%)
+   --> Top values: ['kgYRkvKRQgYx9jIQgXLLxr0v7dE3': 548, 'Er9HF10K9NgwPG8PctYjRetPQay2': 532, 'VGW1x4qXD7OLGCIiV0yaPUnRW5C3': 522, 'TALyh0LIwdS40GfqkyZsPP1Sais2': 510, 'uuUEOFuawjTd1LVaVDwF5PQzrSQ2': 489]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,397 | Nulls: 0 (0.0%)
+   --> Range: Min = 9 | Max = 2971
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 140 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,134 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1808
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 624 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 827
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 2,681 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 110310
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 10,745 | Nulls: 0 (0.0%)
+   --> Range: Min = 160 | Max = 1236480
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 172,791]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 110,782, 'Organic': 31,206, '\N': 30,803]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 110,782, '\N': 62,009]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 7 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 104,355, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 44,383, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 23,283, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 533, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 224]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 172,791]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 172,791]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 146,374 | Nulls: 3,209 (1.86%)
+   --> Top values: ['firebase_exp_abt_57:1': 405, 'firebase_exp_abt_57:0': 322, 'firebase_exp_abt_30:0,firebase_exp_abt_34:0,firebase_exp_abt_26:1': 221, 'firebase_exp_abt_34:0,firebase_exp_abt_26:0,firebase_exp_abt_30:1': 209, 'firebase_exp_abt_26:1,firebase_exp_abt_30:0,firebase_exp_abt_34:0': 208]
+
+📌 Cột: [item_category] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 172,791]
+
+📌 Cột: [item_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 172,791]
+
+📌 Cột: [source] | Type: VARCHAR | Unique: 7 | Nulls: 0 (0.0%)
+   --> Top values: ['level_play': 114,933, 'revive': 48,203, 'heart_refill': 4,099, 'level_booster_EXTRA_CAPACITY': 3,377, 'level_booster_REMOVE_ITEM': 1,242]
+
+📌 Cột: [source_id] | Type: VARCHAR | Unique: 4,034 | Nulls: 0 (0.0%)
+   --> Top values: ['15_15': 9,729, '12_12': 9,679, '18_18': 9,230, '31_31': 2,131, '64_64': 1,955]
+
+📌 Cột: [value] | Type: BIGINT | Unique: 7 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 3900
+   --> Top values: ['1': 114,933, '900': 45,469, '1900': 6,890, '1400': 3,377, '1200': 2,056]
+
+📌 Cột: [value_balance] | Type: BIGINT | Unique: 2,700 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 110310
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 60,826 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785387203 | Max = 1787643990
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 292 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 339
+
+
+==================================================
+TABLE: main.winstreak_point_gained
+==================================================
+Total Rows: 465,460
+
+📌 Cột: [event_date] | Type: DATE | Unique: 28 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-25
+   --> Top values: ['2026-08-09': 43,858, '2026-08-11': 42,893, '2026-08-12': 42,541, '2026-08-10': 41,795, '2026-08-08': 36,874]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 461,343 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785394151933016 | Max = 1787644745035766
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 9,343 | Nulls: 0 (0.0%)
+   --> Top values: ['1f3c147a0e961256482ac9a0dab33e4a': 873, '38AF78B5616D44C6B783B22606078BD6': 793, '67f394e89491520ecb1d9b1acb1ce9ad': 698, 'F6193364F75142A997668D8F9EFADDB8': 682, 'FE49DDC1EE9B4FDAA90C466AA8D9D1EF': 656]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 9,295 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780663541294000 | Max = 1787201689061000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 83 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 238,611, 'Apple': 128,861, 'Google': 28,540, 'Xiaomi': 23,818, 'Motorola': 14,450]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,140 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 8,644, 'iPhone 17 Pro Max': 7,348, 'SM-S928U': 6,717, 'iPhone 16 Pro Max': 6,366, 'iPhone 13': 6,067]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 61 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 218,934, 'iOS 26.5.2': 62,228, 'iOS 26.6': 41,286, 'Android 15': 28,909, 'Android 14': 25,242]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 2,319 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 343,842, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 793, '4D868096-E00C-4217-8113-DA5EB88254C9': 682, '8106D9B9-54D3-4831-8097-2ED5267AB686': 656, 'BC486F9B-C6EB-48EF-B4D6-EE8C393C04C8': 555]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 6,847 | Nulls: 121,633 (26.13%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 6,840, '0ff421b1-d21e-4426-8468-7948d593e492': 873, '36eacdce-b2b2-4af5-ad62-2fe405832399': 698, '07808dad-ac8e-4c3c-93de-f7f24a29dd87': 629, '11e9ad06-d575-4694-8fb1-eb8167fc5303': 610]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 24 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 132,348, '-14400': 98,852, '3600': 84,105, '-18000': 65,542, '-25200': 34,120]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 64 | Nulls: 273 (0.06%)
+   --> Top values: ['United States': 195,563, 'Germany': 85,370, 'United Kingdom': 84,108, 'France': 44,226, 'Canada': 27,238]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 5,728 | Nulls: 273 (0.06%)
+   --> Top values: ['\N': 32,047, 'London': 10,055, 'Berlin': 4,815, 'Paris': 4,397, 'New York': 2,903]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 465,460]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 336,599, 'iTunes': 128,853, 'manual_install': 8]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 10,123 (2.17%)
+   --> Top values: ['(direct)': 373,991, '\N': 81,346]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 373,991, '\N': 81,346, 'organic': 10,123]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 373,991, '\N': 81,346, 'google-play': 9,807, 'google': 316]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 336,599, 'IOS': 128,861]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 9,329 | Nulls: 0 (0.0%)
+   --> Top values: ['1785809970791-7625813796588104604': 873, '1785630485402-1241193': 793, '1785216285510-4868096': 682, '1785632008999-8106995': 656, '1785470343919-8845912474909333331': 629]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 9,308 | Nulls: 0 (0.0%)
+   --> Top values: ['bq3BqWr2vza5lINktrYQdsMG3E02': 873, 'M6sCfZ0VPBZf8qsi67hcYooxAot1': 793, 'TALyh0LIwdS40GfqkyZsPP1Sais2': 682, '48Emy31GMBMobyKHEOg2e1SAplr1': 656, 'hyE4KiG4BfYvdloYARNV1rXOscC2': 639]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 1,850 | Nulls: 0 (0.0%)
+   --> Range: Min = 16 | Max = 2971
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 126 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 1,568 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1829
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 818 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 834
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 3,472 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 2110540
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 14,275 | Nulls: 0 (0.0%)
+   --> Range: Min = 160 | Max = 2231240
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 465,460]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 338,542, 'Organic': 104,760, '\N': 22,158]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 338,542, '\N': 126,918]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 8 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 262,147, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 126,288, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 75,647, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 825, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 501]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 465,460]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 465,460]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 364,132 | Nulls: 6,236 (1.34%)
+   --> Top values: ['firebase_exp_abt_57:1': 722, 'firebase_exp_abt_57:0': 707, 'firebase_exp_abt_30:0,firebase_exp_abt_26:1,firebase_exp_abt_34:0': 540, 'firebase_exp_abt_30:0,firebase_exp_abt_34:0,firebase_exp_abt_26:1': 532, 'firebase_exp_abt_34:0,firebase_exp_abt_26:1,firebase_exp_abt_30:0': 526]
+
+📌 Cột: [current_streak] | Type: BIGINT | Unique: 256 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 256
+
+📌 Cột: [points_gained] | Type: BIGINT | Unique: 154 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 14400
+
+📌 Cột: [current_total_points] | Type: BIGINT | Unique: 14,371 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 39541
+
+📌 Cột: [level_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 465,460]
+
+📌 Cột: [ga_session_id] | Type: BIGINT | Unique: 72,149 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785387203 | Max = 1787643990
+
+📌 Cột: [ga_session_number] | Type: BIGINT | Unique: 333 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 351
+
+
+==================================================
+TABLE: main.winstreak_reward_claimed
+==================================================
+Total Rows: 46,754
+
+📌 Cột: [event_date] | Type: DATE | Unique: 28 | Nulls: 0 (0.0%)
+   --> Range: Min = 2026-07-29 | Max = 2026-08-25
+   --> Top values: ['2026-08-09': 4,418, '2026-08-11': 4,262, '2026-08-12': 4,203, '2026-08-10': 4,093, '2026-08-08': 3,809]
+
+📌 Cột: [event_timestamp] | Type: BIGINT | Unique: 46,364 | Nulls: 0 (0.0%)
+   --> Range: Min = 1785394797720405 | Max = 1787641695203139
+
+📌 Cột: [user_pseudo_id] | Type: VARCHAR | Unique: 8,728 | Nulls: 0 (0.0%)
+   --> Top values: ['1f3c147a0e961256482ac9a0dab33e4a': 65, '67f394e89491520ecb1d9b1acb1ce9ad': 60, '857ddaf1e4cf4c0bb5c701239bf5b185': 57, '87dc5c38702af9532d4238781db53b38': 46, 'F6193364F75142A997668D8F9EFADDB8': 46]
+
+📌 Cột: [user_first_touch_timestamp] | Type: BIGINT | Unique: 8,687 | Nulls: 0 (0.0%)
+   --> Range: Min = 1780713598425000 | Max = 1787201689061000
+
+📌 Cột: [mobile_brand_name] | Type: VARCHAR | Unique: 76 | Nulls: 0 (0.0%)
+   --> Top values: ['Samsung': 24,320, 'Apple': 12,585, 'Google': 2,702, 'Xiaomi': 2,361, 'Motorola': 1,567]
+
+📌 Cột: [mobile_model_name] | Type: VARCHAR | Unique: 1,104 | Nulls: 0 (0.0%)
+   --> Top values: ['SM-S938U': 909, 'iPhone 17 Pro Max': 795, 'SM-S928U': 687, 'iPhone 13': 615, 'iPhone 15': 605]
+
+📌 Cột: [operating_system_version] | Type: VARCHAR | Unique: 60 | Nulls: 0 (0.0%)
+   --> Top values: ['Android 16': 22,238, 'iOS 26.5.2': 6,157, 'iOS 26.6': 4,000, 'Android 15': 2,934, 'Android 14': 2,592]
+
+📌 Cột: [vendor_id] | Type: VARCHAR | Unique: 2,170 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 34,919, '4D868096-E00C-4217-8113-DA5EB88254C9': 46, '8106D9B9-54D3-4831-8097-2ED5267AB686': 40, 'E12E4119-3C0B-4067-9EB5-A2D63E6E4195': 30, 'BC486F9B-C6EB-48EF-B4D6-EE8C393C04C8': 29]
+
+📌 Cột: [advertising_id] | Type: VARCHAR | Unique: 6,395 | Nulls: 11,837 (25.32%)
+   --> Top values: ['00000000-0000-0000-0000-000000000000': 686, '0ff421b1-d21e-4426-8468-7948d593e492': 65, '36eacdce-b2b2-4af5-ad62-2fe405832399': 60, '117a7b0d-8067-4e14-9938-f8cd6ebce0db': 57, 'bd34ebb7-aec4-46ff-aebb-74fad4fbc3c6': 55]
+
+📌 Cột: [time_zone_offset_seconds] | Type: BIGINT | Unique: 24 | Nulls: 0 (0.0%)
+   --> Range: Min = -36000 | Max = 43200
+   --> Top values: ['7200': 13,263, '-14400': 10,301, '3600': 8,284, '-18000': 6,890, '-25200': 3,357]
+
+📌 Cột: [country] | Type: VARCHAR | Unique: 59 | Nulls: 23 (0.05%)
+   --> Top values: ['United States': 20,250, 'Germany': 8,421, 'United Kingdom': 8,291, 'France': 4,583, 'Canada': 2,682]
+
+📌 Cột: [city] | Type: VARCHAR | Unique: 4,853 | Nulls: 23 (0.05%)
+   --> Top values: ['\N': 3,255, 'London': 983, 'Berlin': 508, 'Paris': 453, 'New York': 311]
+
+📌 Cột: [app_version] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['1.0.11': 46,754]
+
+📌 Cột: [install_source] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['com.android.vending': 34,169, 'iTunes': 12,584, 'manual_install': 1]
+
+📌 Cột: [traffic_source_name] | Type: VARCHAR | Unique: 2 | Nulls: 881 (1.88%)
+   --> Top values: ['(direct)': 35,973, '\N': 9,900]
+
+📌 Cột: [traffic_source_medium] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['(none)': 35,973, '\N': 9,900, 'organic': 881]
+
+📌 Cột: [traffic_source] | Type: VARCHAR | Unique: 4 | Nulls: 0 (0.0%)
+   --> Top values: ['(direct)': 35,973, '\N': 9,900, 'google-play': 859, 'google': 22]
+
+📌 Cột: [platform] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['ANDROID': 34,169, 'IOS': 12,585]
+
+📌 Cột: [appsflyer_id] | Type: VARCHAR | Unique: 8,720 | Nulls: 0 (0.0%)
+   --> Top values: ['1785809970791-7625813796588104604': 65, '1784184788108-6689775959590340446': 46, '1785216285510-4868096': 46, '1785638924657-1156228778315860226': 45, '1785632008999-8106995': 40]
+
+📌 Cột: [player_id] | Type: VARCHAR | Unique: 8,701 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 80, 'bq3BqWr2vza5lINktrYQdsMG3E02': 65, 'hyE4KiG4BfYvdloYARNV1rXOscC2': 48, 'TALyh0LIwdS40GfqkyZsPP1Sais2': 46, 'TXA9kDx5X1MJ0zWASu8FWDbAkVE3': 46]
+
+📌 Cột: [max_level] | Type: BIGINT | Unique: 963 | Nulls: 0 (0.0%)
+   --> Range: Min = 16 | Max = 2964
+
+📌 Cột: [iap_count] | Type: BIGINT | Unique: 81 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 152
+   --> Top values: ['0': 41,626, '1': 2,093, '2': 804, '3': 487, '4': 289]
+
+📌 Cột: [rewarded_count] | Type: BIGINT | Unique: 737 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 1827
+
+📌 Cột: [inter_count] | Type: BIGINT | Unique: 497 | Nulls: 0 (0.0%)
+   --> Range: Min = 0 | Max = 827
+
+📌 Cột: [coin_balance] | Type: BIGINT | Unique: 1,795 | Nulls: 0 (0.0%)
+   --> Range: Min = 30 | Max = 2110620
+
+📌 Cột: [coin_total] | Type: BIGINT | Unique: 5,443 | Nulls: 0 (0.0%)
+   --> Range: Min = 320 | Max = 2231320
+
+📌 Cột: [life] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 46,754]
+
+📌 Cột: [af_status] | Type: VARCHAR | Unique: 3 | Nulls: 0 (0.0%)
+   --> Top values: ['Non-organic': 33,294, 'Organic': 10,198, '\N': 3,262]
+
+📌 Cột: [media_source] | Type: VARCHAR | Unique: 2 | Nulls: 0 (0.0%)
+   --> Top values: ['applovin_int': 33,294, '\N': 13,460]
+
+📌 Cột: [campaign] | Type: VARCHAR | Unique: 7 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 27,281, 'TWH010a_T5_D28_Jul04_tier1_Quang_ALV': 12,122, 'TWH010i_T5_D28_Jul15_WW_Quang_ALV': 7,163, 'TWH010i_T5_D7_Jul07_tier1_Quang_ALV': 107, 'TWH010a_T5_D7_June07_WW_Quang_ALV': 73]
+
+📌 Cột: [adset] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 46,754]
+
+📌 Cột: [adgroup_id] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 46,754]
+
+📌 Cột: [ab_test] | Type: VARCHAR | Unique: 42,063 | Nulls: 755 (1.61%)
+   --> Top values: ['firebase_exp_abt_57:1': 127, 'firebase_exp_abt_57:0': 69, 'firebase_exp_abt_34:0,firebase_exp_abt_26:1,firebase_exp_abt_30:0': 62, 'firebase_exp_abt_26:1,firebase_exp_abt_30:0,firebase_exp_abt_34:0': 60, 'firebase_exp_abt_26:0,firebase_exp_abt_30:0,firebase_exp_abt_34:0': 59]
+
+📌 Cột: [milestone_id] | Type: BIGINT | Unique: 20 | Nulls: 0 (0.0%)
+   --> Range: Min = 1 | Max = 20
+   --> Top values: ['1': 12,281, '2': 9,234, '3': 7,560, '4': 5,653, '5': 3,712]
+
+📌 Cột: [event_instance_date] | Type: VARCHAR | Unique: 1 | Nulls: 0 (0.0%)
+   --> Top values: ['\N': 46,754]
+
+📌 Cột: [ga_session_id] | Type: VARCHAR | Unique: 29,973 | Nulls: 0 (0.0%)
+   --> Top values: ['1786537611': 15, '1785656202': 14, '1785581637': 13, '1785949445': 12, '1786564028': 12]
+
+📌 Cột: [ga_session_number] | Type: VARCHAR | Unique: 239 | Nulls: 0 (0.0%)
+   --> Top values: ['2': 3,984, '3': 3,500, '1': 3,210, '4': 3,004, '5': 2,666]

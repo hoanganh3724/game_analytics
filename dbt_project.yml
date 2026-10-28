@@ -31,5 +31,9 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   game_analytics:
-    # Config indicated by + and applies to all files under models/example/
-  
+    1_bronze:
+      +schema: bronze
+    2_silver:
+      +schema: silver
+    3_gold:
+      +schema: gold

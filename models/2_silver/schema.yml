@@ -1,0 +1,13 @@
+version: 2
+
+models:
+  - name: int_level_gameplay
+    description: "Intermediate model joining level start and level end events with deduplication."
+  - name: int_user_economy
+    description: "Intermediate model unifying earn, spend, and buy resource transactions."
+  - name: int_ad_monetization
+    description: "Intermediate model for deduplicated ad impression events."
+  - name: int_iap_monetization
+    description: "Intermediate model for deduplicated IAP purchase events."
+  - name: int_winstreak_events
+    description: "Intermediate model for winstreak points gained and milestone rewards."

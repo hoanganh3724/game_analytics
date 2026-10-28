@@ -1,30 +1,43 @@
-{{ config(materialized='table') }}
-
-WITH points AS (
+WITH streak_points AS (
     SELECT
         user_pseudo_id,
-        CAST(TRY_CAST(ga_session_id AS DOUBLE) AS BIGINT) AS session_id,
-        event_datetime AS event_time,
+        player_id,
+        ga_session_id,
         event_timestamp,
-        points_gained
+        event_date,
+        'POINT_GAINED' AS winstreak_event_type,
+        current_streak,
+        points_gained,
+        current_total_points,
+        level_id,
+        CAST(NULL AS INT) AS milestone_id,
+        CAST(NULL AS BIGINT) AS coin_balance,
+        country,
+        device_operating_system,
+        campaign
     FROM {{ ref('stg_winstreak_point_gained') }}
 ),
-rewards AS (
+
+rewards_claimed AS (
     SELECT
         user_pseudo_id,
-        CAST(TRY_CAST(ga_session_id AS DOUBLE) AS BIGINT) AS session_id,
+        player_id,
+        ga_session_id,
         event_timestamp,
-        rewarded_count AS reward_amount
+        event_date,
+        'REWARD_CLAIMED' AS winstreak_event_type,
+        CAST(NULL AS INT) AS current_streak,
+        CAST(NULL AS INT) AS points_gained,
+        CAST(NULL AS INT) AS current_total_points,
+        CAST(NULL AS INT) AS level_id,
+        milestone_id,
+        coin_balance,
+        country,
+        device_operating_system,
+        campaign
     FROM {{ ref('stg_winstreak_reward_claimed') }}
 )
-SELECT
-    p.user_pseudo_id,
-    p.session_id,
-    p.event_time,
-    p.points_gained,
-    r.reward_amount
-FROM points p
-FULL OUTER JOIN rewards r
-    ON p.user_pseudo_id = r.user_pseudo_id
-   AND p.session_id = r.session_id
-   AND p.event_timestamp = r.event_timestamp
+
+SELECT * FROM streak_points
+UNION ALL
+SELECT * FROM rewards_claimed

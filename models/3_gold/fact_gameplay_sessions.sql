@@ -2,12 +2,23 @@
 
 SELECT
     user_pseudo_id,
-    session_id,
+    player_id,
+    ga_session_id,
     level_id,
-    start_time,
-    end_time,
-    CAST(start_time AS DATE) AS session_date,
-    play_duration_seconds,
-    final_result,
-    is_dropped_out
+    level_index,
+    attempt,
+    start_timestamp,
+    end_timestamp,
+    status,
+    duration_seconds,
+    revive_count,
+    booster_0,
+    booster_1,
+    booster_2,
+    booster_3,
+    unsolved_items,
+    total_items,
+    move_count,
+    campaign,
+    ab_test
 FROM {{ ref('int_level_gameplay') }}

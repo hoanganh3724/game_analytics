@@ -2,12 +2,15 @@
 
 SELECT
     user_pseudo_id,
-    session_id,
-    impression_time AS transaction_time,
-    CAST(impression_time AS DATE) AS transaction_date,
+    player_id,
+    ga_session_id,
+    event_timestamp,
     ad_platform,
     ad_source,
     ad_format,
-    ad_revenue_usd,
-    mobile_brand
-FROM {{ ref('int_ad_impression') }}
+    ad_unit_name,
+    ad_placement,
+    revenue_usd,
+    currency,
+    campaign
+FROM {{ ref('int_ad_monetization') }}

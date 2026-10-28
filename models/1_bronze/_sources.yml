@@ -1,16 +1,15 @@
 version: 2
 
 sources:
-  - name: bronze_raw
-    database: game_analytics_db
+  - name: raw_game_data
     schema: main
     tables:
-      - name: level_start
-      - name: level_end
       - name: ad_impression
-      - name: in_app_purchase
-      - name: earn_resource
-      - name: spend_resource
       - name: buy_resource
+      - name: earn_resource
+      - name: in_app_purchase
+      - name: level_end
+      - name: level_start
+      - name: spend_resource
       - name: winstreak_point_gained
       - name: winstreak_reward_claimed

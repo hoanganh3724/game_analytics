@@ -3,7 +3,8 @@ game_analytics:
   outputs:
     dev:
       type: duckdb
-      path: 'game_analytics.duckdb'
+      path: 'md:game_analytics_db'
+      threads: 4
 
     prod:
       type: duckdb

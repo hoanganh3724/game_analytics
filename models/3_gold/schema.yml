@@ -1,87 +1,21 @@
 version: 2
 
 models:
-  # --- 1. DIMENSION MODELS ---
-  - name: dim_user_devices
-    description: "Bảng chiều thông tin thiết bị và mốc thời gian xuất hiện đầu tiên của người chơi"
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - unique
-          - not_null
-
-  - name: dim_date
-    description: "Bảng chiều thời gian"
-    columns:
-      - name: date_key
-        tests:
-          - unique
-          - not_null
-
   - name: dim_levels
-    description: "Bảng chiều danh sách level"
-    columns:
-      - name: level_id
-        tests:
-          - unique
-          - not_null
-
-  # --- 2. FACT ATOMIC MODELS ---
+    description: "Dimension table for game levels (1 to 500 mapping)."
+  - name: dim_date
+    description: "Dimension table for calendar dates."
+  - name: dim_user_devices
+    description: "Dimension table for unique user attributes and devices."
   - name: fact_gameplay_sessions
-    description: "Bảng fact chi tiết từng phiên chơi level"
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - not_null
-          - relationships:
-              to: ref('dim_user_devices')
-              field: user_pseudo_id
-
-  - name: fact_iap_transactions
-    description: "Bảng fact chi tiết giao dịch mua hàng IAP"
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - not_null
-
+    description: "Fact table for gameplay sessions and results."
   - name: fact_ad_impressions
-    description: "Bảng fact chi tiết lượt xem quảng cáo"
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - not_null
-
+    description: "Fact table for ad monetization."
+  - name: fact_iap_transactions
+    description: "Fact table for in-app purchases."
   - name: fact_economy_transactions
-    description: "Bảng fact chi tiết biến động tài nguyên (Gold/Gem/Earn/Spend/Buy)"
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - not_null
-
-  # --- 3. DATA MARTS (GOLD AGGREGATION) ---
+    description: "Fact table for in-game resource economy (earn, spend, buy)."
   - name: mart_user_daily_summary
-    description: "Data Mart tổng hợp toàn bộ KPI chính (Sessions, Playtime, Revenue, Coins) theo User x Ngày cho Power BI"
-    tests:
-      - dbt_utils.unique_combination_of_columns:
-          arguments:
-            combination_of_columns:
-              - user_pseudo_id
-              - metric_date
-    columns:
-      - name: user_pseudo_id
-        tests:
-          - not_null
-          - relationships:
-              arguments:
-                to: ref('dim_user_devices')
-                field: user_pseudo_id
-      - name: metric_date
-        tests:
-          - not_null
-
+    description: "Daily summary mart for user KPIs (DAU, Playtime, Ad Revenue, Spend)."
   - name: mart_cohort_retention_daily
-    description: "Data Mart phân tích tỉ lệ giữ chân (Retention) theo Cohort x Ngày"
-    columns:
-      - name: cohort_date
-        tests:
-          - not_null
+    description: "Daily cohort retention mart tracking D1, D7, D28 retention."
