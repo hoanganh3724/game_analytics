@@ -5,6 +5,7 @@ SELECT
     player_id,
     ga_session_id,
     event_timestamp,
+    event_date,
     ad_platform,
     ad_source,
     ad_format,

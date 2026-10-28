@@ -3,7 +3,7 @@
 WITH user_first_date AS (
     SELECT
         user_pseudo_id,
-        MIN(TO_TIMESTAMP(start_timestamp / 1000000)::DATE) AS install_date
+        MIN(start_date) AS install_date
     FROM {{ ref('fact_gameplay_sessions') }}
     GROUP BY user_pseudo_id
 ),
@@ -11,7 +11,7 @@ WITH user_first_date AS (
 user_activity AS (
     SELECT DISTINCT
         user_pseudo_id,
-        TO_TIMESTAMP(start_timestamp / 1000000)::DATE AS activity_date
+        start_date AS activity_date
     FROM {{ ref('fact_gameplay_sessions') }}
 )
 

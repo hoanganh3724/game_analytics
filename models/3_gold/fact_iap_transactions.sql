@@ -5,6 +5,7 @@ SELECT
     player_id,
     ga_session_id,
     event_timestamp,
+    event_date,
     product_id,
     revenue_usd,
     campaign

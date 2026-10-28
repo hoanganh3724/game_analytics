@@ -3,7 +3,7 @@
 WITH daily_gameplay AS (
     SELECT
         user_pseudo_id,
-        TO_TIMESTAMP(start_timestamp / 1000000)::DATE AS activity_date,
+        start_date AS activity_date,
         COUNT(1) AS total_levels_played,
         SUM(CASE WHEN status = 1 THEN 1 ELSE 0 END) AS levels_won,
         SUM(CASE WHEN status = 0 THEN 1 ELSE 0 END) AS levels_lost,
@@ -16,7 +16,7 @@ WITH daily_gameplay AS (
 daily_ads AS (
     SELECT
         user_pseudo_id,
-        TO_TIMESTAMP(event_timestamp / 1000000)::DATE AS activity_date,
+        event_date AS activity_date,
         COUNT(1) AS total_ad_impressions,
         SUM(revenue_usd) AS total_ad_revenue_usd
     FROM {{ ref('fact_ad_impressions') }}
@@ -26,7 +26,7 @@ daily_ads AS (
 daily_iap AS (
     SELECT
         user_pseudo_id,
-        TO_TIMESTAMP(event_timestamp / 1000000)::DATE AS activity_date,
+        event_date AS activity_date,
         COUNT(1) AS total_iap_transactions,
         SUM(revenue_usd) AS total_iap_revenue_usd
     FROM {{ ref('fact_iap_transactions') }}
