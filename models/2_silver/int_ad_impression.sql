@@ -2,7 +2,7 @@
 
 SELECT
     user_pseudo_id,
-    CAST(ga_session_id AS VARCHAR) AS session_id,
+    CAST(TRY_CAST(ga_session_id AS DOUBLE) AS BIGINT) AS session_id,
     event_datetime AS impression_time,
     ad_platform,
     ad_source,

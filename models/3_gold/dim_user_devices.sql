@@ -1,14 +1,22 @@
 {{ config(
     materialized='table',
-    schema='silver'
+    schema='gold'
 ) }}
 
-WITH user_first_seen AS (
+WITH all_user_events AS (
+    SELECT user_pseudo_id, start_time AS event_time FROM {{ ref('int_level_gameplay') }} WHERE user_pseudo_id IS NOT NULL
+    UNION ALL
+    SELECT user_pseudo_id, purchase_time AS event_time FROM {{ ref('int_in_app_purchase') }} WHERE user_pseudo_id IS NOT NULL
+    UNION ALL
+    SELECT user_pseudo_id, impression_time AS event_time FROM {{ ref('int_ad_impression') }} WHERE user_pseudo_id IS NOT NULL
+),
+
+user_first_seen AS (
     SELECT 
         user_pseudo_id, 
-        MIN(start_time) AS first_seen_time,
-        CAST(MIN(start_time) AS DATE) AS first_seen_date
-    FROM {{ ref('int_level_gameplay') }} 
+        MIN(event_time) AS first_seen_time,
+        CAST(MIN(event_time) AS DATE) AS first_seen_date
+    FROM all_user_events
     GROUP BY user_pseudo_id
 ),
 

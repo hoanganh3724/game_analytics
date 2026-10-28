@@ -1,8 +1,15 @@
+import os
+import sys
 import duckdb
 
-MOTHERDUCK_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImhvYW5nYW5oMjQ1MzM2OUBnbWFpbC5jb20iLCJtZFJlZ2lvbiI6ImF3cy1hcC1ub3J0aGVhc3QtMSIsInNlc3Npb24iOiJob2FuZ2FuaDI0NTMzNjkuZ21haWwuY29tIiwicGF0IjoiZnBsOUNYRl9lWVBNM2dUNVhUMEdDSDRmS01uc21NemFPT1lVcVloYnY3cyIsInVzZXJJZCI6IjljZjkwMTBhLWQxZGEtNDViZS1hZTFiLWJlMmJhNmFmY2ZhZiIsImlzcyI6Im1kX3BhdCIsInJlYWRPbmx5IjpmYWxzZSwidG9rZW5UeXBlIjoicmVhZF93cml0ZSIsImlhdCI6MTc5MjYxNzg1MX0.vqlyYOTR8qjMqhfjDpna_4eKXi1tAjz_Kg-xKkXJ5vU"
+# Lấy MotherDuck Token từ biến môi trường đã cài trên máy/GitHub Secrets
+MOTHERDUCK_TOKEN = os.getenv("MOTHERDUCK_TOKEN")
 
-# Kết nối MotherDuck
+if not MOTHERDUCK_TOKEN:
+    print("❌ ERROR: Khong tim thay MOTHERDUCK_TOKEN trong bien moi truong!")
+    sys.exit(1)
+
+# Kết nối MotherDuck an toàn
 con = duckdb.connect(f"md:game_analytics_db?token={MOTHERDUCK_TOKEN}")
 
 tables = [
@@ -12,7 +19,6 @@ tables = [
 ]
 
 for table in tables:
-    # Trỏ trực tiếp vào file .parquet đơn lẻ trong thư mục ../parquet_bronze
     parquet_file = f"../parquet_bronze/{table}.parquet"
     
     con.execute(f"""

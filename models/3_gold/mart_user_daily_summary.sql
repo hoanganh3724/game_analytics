@@ -1,19 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(
+    materialized='table',
+    schema='gold'
+) }}
 
-WITH valid_users AS (
-    -- Chỉ lấy danh sách người dùng hợp lệ đã có trong dim_user để đảm bảo toàn vẹn khóa ngoại
-    SELECT user_pseudo_id 
-    FROM {{ ref('dim_user_devices') }}
-),
-
-daily_gameplay AS (
+WITH daily_gameplay AS (
     SELECT
         user_pseudo_id,
         CAST(start_time AS DATE) AS metric_date,
         COUNT(DISTINCT session_id) AS total_sessions,
         SUM(play_duration_seconds) AS total_playtime_seconds,
         SUM(CASE WHEN is_dropped_out THEN 1 ELSE 0 END) AS total_dropouts
-    FROM {{ ref('int_level_gameplay') }}
+    FROM {{ ref('fact_gameplay_sessions') }}
     WHERE user_pseudo_id IS NOT NULL AND start_time IS NOT NULL
     GROUP BY user_pseudo_id, CAST(start_time AS DATE)
 ),
@@ -21,35 +18,35 @@ daily_gameplay AS (
 daily_iap AS (
     SELECT
         user_pseudo_id,
-        CAST(purchase_time AS DATE) AS metric_date,
-        COUNT(*) AS iap_count,
+        CAST(transaction_time AS DATE) AS metric_date,
+        COUNT(*) AS iap_transaction_count,
         SUM(revenue_usd) AS iap_revenue
-    FROM {{ ref('int_in_app_purchase') }}
-    WHERE user_pseudo_id IS NOT NULL AND purchase_time IS NOT NULL
-    GROUP BY user_pseudo_id, CAST(purchase_time AS DATE)
+    FROM {{ ref('fact_iap_transactions') }}
+    WHERE user_pseudo_id IS NOT NULL AND transaction_time IS NOT NULL
+    GROUP BY user_pseudo_id, CAST(transaction_time AS DATE)
 ),
 
 daily_ads AS (
     SELECT
         user_pseudo_id,
-        CAST(impression_time AS DATE) AS metric_date,
-        COUNT(*) AS ad_impressions_count,
+        CAST(transaction_time AS DATE) AS metric_date,
+        COUNT(*) AS ad_impression_count,
         SUM(ad_revenue_usd) AS ad_revenue
-    FROM {{ ref('int_ad_impression') }}
-    WHERE user_pseudo_id IS NOT NULL AND impression_time IS NOT NULL
-    GROUP BY user_pseudo_id, CAST(impression_time AS DATE)
+    FROM {{ ref('fact_ad_impressions') }}
+    WHERE user_pseudo_id IS NOT NULL AND transaction_time IS NOT NULL
+    GROUP BY user_pseudo_id, CAST(transaction_time AS DATE)
 ),
 
 daily_eco AS (
     SELECT
         user_pseudo_id,
-        CAST(transaction_time AS DATE) AS metric_date,
+        transaction_date AS metric_date,
         SUM(CASE WHEN transaction_type = 'Earn' THEN amount ELSE 0 END) AS total_coins_earned,
         SUM(CASE WHEN transaction_type = 'Spend' THEN amount ELSE 0 END) AS total_coins_spent,
         SUM(CASE WHEN transaction_type = 'Buy' THEN amount ELSE 0 END) AS total_coins_bought
     FROM {{ ref('fact_economy_transactions') }}
-    WHERE user_pseudo_id IS NOT NULL AND transaction_time IS NOT NULL
-    GROUP BY user_pseudo_id, CAST(transaction_time AS DATE)
+    WHERE user_pseudo_id IS NOT NULL AND transaction_date IS NOT NULL
+    GROUP BY user_pseudo_id, transaction_date
 ),
 
 joined_metrics AS (
@@ -59,9 +56,9 @@ joined_metrics AS (
         COALESCE(g.total_sessions, 0) AS total_sessions,
         COALESCE(g.total_playtime_seconds, 0) AS total_playtime_seconds,
         COALESCE(g.total_dropouts, 0) AS total_dropouts,
-        COALESCE(i.iap_count, 0) AS iap_count,
+        COALESCE(i.iap_transaction_count, 0) AS iap_transaction_count,
         COALESCE(i.iap_revenue, 0.0) AS iap_revenue,
-        COALESCE(a.ad_impressions_count, 0) AS ad_impressions_count,
+        COALESCE(a.ad_impression_count, 0) AS ad_impression_count,
         COALESCE(a.ad_revenue, 0.0) AS ad_revenue,
         (COALESCE(i.iap_revenue, 0.0) + COALESCE(a.ad_revenue, 0.0)) AS total_revenue,
         COALESCE(e.total_coins_earned, 0) AS total_coins_earned,
@@ -80,7 +77,6 @@ joined_metrics AS (
 
 SELECT j.*
 FROM joined_metrics j
--- Lọc cứng triệt để để đảm bảo không bị dính NULL và loại bỏ hoàn toàn orphan user_id không nằm trong dim_users
-INNER JOIN valid_users v ON j.user_pseudo_id = v.user_pseudo_id
+INNER JOIN {{ ref('dim_user_devices') }} v ON j.user_pseudo_id = v.user_pseudo_id
 WHERE j.user_pseudo_id IS NOT NULL 
   AND j.metric_date IS NOT NULL

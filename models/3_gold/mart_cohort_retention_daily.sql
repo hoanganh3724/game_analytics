@@ -14,7 +14,7 @@ user_activity AS (
     SELECT DISTINCT
         user_pseudo_id,
         metric_date AS activity_date
-    FROM {{ ref('fact_daily_user_metrics') }}
+    FROM {{ ref('mart_user_daily_summary') }}
 )
 SELECT 
     c.cohort_date,
